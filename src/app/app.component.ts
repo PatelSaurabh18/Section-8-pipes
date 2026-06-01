@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { DatePipe,DecimalPipe } from '@angular/common';
 import { TempraturePipe } from './temprature.pipe';
+import { SortPipe } from './sort.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports:[DatePipe,DecimalPipe,TempraturePipe]
+  imports:[DatePipe,DecimalPipe,TempraturePipe,SortPipe]
 })
 export class AppComponent {
   currentDate = new Date();
