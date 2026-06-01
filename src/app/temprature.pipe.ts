@@ -10,10 +10,14 @@ export class TempraturePipe implements PipeTransform {
     ...args:- The configuration values in the pipe  
   */
   transform(
-    value: string | number,
+    value: string | number | null,
     inputType: 'cel' | 'fah',
-    outputType: 'cel' | 'fah',
+    outputType?: 'cel' | 'fah',
   ) {
+
+    if(!value){
+      return value;
+    }
 
     let val: number;
 
@@ -34,14 +38,14 @@ export class TempraturePipe implements PipeTransform {
     }
 
 
-    let symbol : '℉' | "C";
+    let symbol : '℉' | "℃";
       if(!outputType){
-        symbol = inputType === 'cel' ? 'C' : '℉';
+        symbol = inputType === 'cel' ? '℃' : '℉';
       }else{  
-        symbol = outputType === 'cel' ? 'C' : '℉';
+        symbol = outputType === 'cel' ? '℃' : '℉';
       }
 
 
-    return `${outputTemp} ${symbol} `;
+    return `${outputTemp.toFixed(2)} ${symbol} `;
   }
 }
