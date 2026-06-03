@@ -23,7 +23,11 @@
       </div>
     </header>
     <ul>
-      @for (temperature of historicTemperatures | sort:'desc'; track temperature) {
+      <!-- @for (temperature of historicTemperatures | sort:'desc'; track temperature) { -->
+    @for (temperature of historicTemperatures ; track temperature) {
+      /*
+        Removed the pipe so the styructure of the data doesn't changes 
+      */
       <li (click)="onReset($index)">{{ temperature | temp:'cel' }}</li>
       }
     </ul>
