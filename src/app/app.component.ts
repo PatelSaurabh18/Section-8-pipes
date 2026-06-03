@@ -22,9 +22,12 @@ export class AppComponent {
   ];
 
   onReset(index: number) {
-    // this.historicTemperatures[index] = 18;
-    const newTemps = [...this.historicTemperatures];
-    newTemps[index] = 18;
-    this.historicTemperatures = newTemps;
+    this.historicTemperatures[index] = 18;
+    // const newTemps = [...this.historicTemperatures];
+    // newTemps[index] = 18;
+    // this.historicTemperatures = newTemps;
+    /*
+      there is a alternative to this, as explained in notes also, we have to make this Pipe as 'Impure Pipe"
+    */
   }
 }

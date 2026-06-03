@@ -56,6 +56,17 @@ onReset(index: number) {
 }
 ```
 
+### ✅ The Other Correct Way: Making Pipe as Impure
+
+
+```ts
+@Pipe({
+  pure:false,
+})
+```
+
+
+
 ---
 
 ## ⚠️ Side Effect: The Dynamic Index Shifting Warning
