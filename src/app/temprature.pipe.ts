@@ -13,7 +13,7 @@ export class TempraturePipe implements PipeTransform {
     value: string | number | null,
     inputType: 'cel' | 'fah',
     outputType?: 'cel' | 'fah',
-  ) {
+     ) {
 
     if(!value){
       return value;
